@@ -1,0 +1,7 @@
+.wrapper {
+  @apply bg-black p-4 shadow-md;
+}
+
+.test {
+  background-color: blue;
+}
