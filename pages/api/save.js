@@ -18,11 +18,12 @@ const genCupom = () => {
 };
 
 export default async (request, response) => {
+  const auxPrivateKey = fromBase64(process.env.SHEET_PRIVATE_KEY.toString());
   moment.locale("pt-br");
   try {
     await doc.useServiceAccountAuth({
       client_email: process.env.SHEET_CLIENT_EMAIL,
-      private_key: fromBase64(process.env.SHEET_PRIVATE_KEY),
+      private_key: auxPrivateKey,
     });
     await doc.loadInfo();
 
